@@ -60,30 +60,37 @@ console.log(myCounter());
 // It should have a `limit` parameter. Any counters we make with `counterMaker`
 // will refuse to go over the limit, and start back at 1.
 
+/***** CODED ABOVE  *****/
 
 // ==== Challenge 4: Create a counter function with an object that can increment and decrement ====
-const counterFactory = (cb) => {
+const counterFactory = () => {
   // Return an object that has two methods called `increment` and `decrement`.
   // `increment` should increment a counter variable in closure scope and return it.
   // `decrement` should decrement the counter variable and return it.
   let count = 0;
 
-  const decrement = () => {
-    count--;
-    return count;
-  }
+    const decrement = () => {
+      count--;
+      return count;
+    }
 
-  const increment = () => {
-    count++;
-    return count;
-  }
-
+    const increment = () => {
+      count++;
+      return count;
+    }
     
-  return cb(decrement, increment);
+  return {increment:increment, decrement:decrement};
 
 }
 
-const myCounter2 = counterFactory(item => `count is ${item}`);
-console.log(myCounter2(decrement()));
+//const myCounter2 = counterFactory(item => `count is ${item}`);
+const myCounter2 = counterFactory();
+console.log(myCounter2.increment());
+console.log(myCounter2.increment());
+console.log(myCounter2.increment());
+console.log(myCounter2.increment());
+console.log(myCounter2.increment());
+console.log(myCounter2.decrement());
+
 
 
