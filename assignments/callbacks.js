@@ -1,6 +1,6 @@
 // Create a higher order function and invoke the callback function to test your work. You have been provided an example of a problem and a solution to see how this works with our items array.  Study both the problem and the solution to figure out the rest of the problems.
 
-const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
 
 /* 
 
@@ -40,15 +40,56 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 
 
+
+
+
+
+const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
+
+const items2 = ['Book', 'Paper'];
+
+const items3 = ['Code'];
+
+
+
+
+
 function getLength(arr, cb) {  
   // getLength passes the length of the array into the callback.
   return cb(arr.length);
 }
-const test1 = getLength(items, item => `Array is ${item} elements long!`);
-console.log(test1);
- 
-// CONCISE TEST
-// getLength( items, (getLength) => { console.log(getLength); } );
+
+
+
+
+/***** TEST 1  *****/
+/*******************/
+function result(callback){
+  return `Test 1A: This array length is ${callback}!`;
+}
+
+const test1a = getLength(items3, result);
+
+console.log(test1a);
+
+
+
+
+// /***** TEST 2  *****/
+// /*******************/
+const test1b = getLength(items, callback => `Test 1B: This array length is ${callback}!`);
+console.log(test1b);
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -56,11 +97,30 @@ function last(arr, cb) {
   // last passes the last item of the array into the callback.
   return cb(arr[arr.length - 1]);   
 }
-const test2 = last(items, item => `Array's last element is ${item}!`);
-console.log(test2);
+
+const test2 = last(items, callback => `Array's last element is ${callback}!`);
+//  console.log(test2);
 
 // CONCISE TEST
 // last( items, (last) => { console.log(last); } );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -70,7 +130,7 @@ function sumNums(x, y, cb) {
   return cb(x + y);
 }
 const test3 = sumNums(4, 7, item => `Sum is ${item}!`);
-console.log(test3);
+// console.log(test3);
 
 // CONCISE TEST
 // sumNums( 4, 7, (sumNums) => { console.log(sumNums); } );
@@ -84,7 +144,7 @@ function multiplyNums(x, y, cb) {
   return cb(x * y);
 }
 const test4 = multiplyNums(10, 3, item => `Product is ${item}`);
-console.log(test4);
+// console.log(test4);
 
 // CONCISE TEST
 // multiplyNums( 10, 3, (multiplyNums) => { console.log(multiplyNums); } );
@@ -100,7 +160,7 @@ function contains(item, list, cb) {
     return cb(false); 
 }
 const test5 = contains('yo-yo', items, item => item);
-console.log(test5);
+// console.log(test5);
 
 // CONCISE TEST
 // contains( 'yo-yo', items, (contains) => { console.log(contains); } );
@@ -117,4 +177,4 @@ function removeDuplicates(array, cb) {
   return cb(Array.from(new Set(array)));
 }
 const test6 = removeDuplicates(['A','A','B','C','A','D','D','E','A','A','B','F'], item => `Unique Array is now ${item}`);
-console.log(test6);
+// console.log(test6);

@@ -63,7 +63,7 @@ runners.forEach(function(item){
   return fullNames.push(`${item.first_name} ${item.last_name}`);
 });
 
-console.log(fullNames);
+// console.log(fullNames);
 
 
 
@@ -76,7 +76,7 @@ firstNamesAllCaps = runners.map(function(item){
   return item.first_name.toUpperCase();
 });
 
-console.log(firstNamesAllCaps)
+// console.log(firstNamesAllCaps)
 
 
 
@@ -88,7 +88,7 @@ runnersLargeSizeShirt = runners.filter(function(item){
   return item.shirt_size === "L";
 });
 
-console.log(runnersLargeSizeShirt);
+// console.log(runnersLargeSizeShirt);
 
 
 
@@ -99,7 +99,7 @@ let ticketPriceTotal = 0;
 
 ticketPriceTotal = runners.reduce( (acc, item) => { return acc + item.donation; }, 0);
 
-console.log(`Donations total: ${ticketPriceTotal}`);
+// console.log(`Donations total: ${ticketPriceTotal}`);
 
 
 
@@ -111,14 +111,14 @@ console.log(`Donations total: ${ticketPriceTotal}`);
 //Get array of runners with .edu because we want super smart education people on a special email list with their details
 
 const eduEmails = runners.filter( (item) => { if ( item.email.includes('.edu') ) return item; } );
-console.log(eduEmails);
+// console.log(eduEmails);
 
 // Problem 2
 //Get string list of people's donations and what company their from to compare corporate employee's greed/charitability. Maybe for a sweet ticker on our donation page.
 let companyAndDonation = [];
 
 runners.forEach( (item) => { return companyAndDonation.push(`${item.company_name}'s employee donated $${item.donation} dollars.`); } );
-console.log(companyAndDonation.sort());
+// console.log(companyAndDonation.sort());
 
 
 // Problem 3
@@ -127,4 +127,4 @@ const donationString = runners.map(function(item){
   return (`$${item.donation.toString()}`);
 });
 
-console.log(donationString);
+// console.log(donationString);

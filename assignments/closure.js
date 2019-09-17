@@ -7,7 +7,7 @@
 function stuff() {
   let name = 'Hugo';
   function displayName() {
-    console.log(name);
+    // console.log(name);
   }
   return displayName;
 }
@@ -42,16 +42,16 @@ const counterMaker = (limit) => {
   return counter;
 };
 
-const myCounter = counterMaker(4);
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
-console.log(myCounter());
+// const myCounter = counterMaker(4);
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
+// console.log(myCounter());
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2
@@ -85,12 +85,12 @@ const counterFactory = () => {
 
 //const myCounter2 = counterFactory(item => `count is ${item}`);
 const myCounter2 = counterFactory();
-console.log(myCounter2.increment());
-console.log(myCounter2.increment());
-console.log(myCounter2.increment());
-console.log(myCounter2.increment());
-console.log(myCounter2.increment());
-console.log(myCounter2.decrement());
+// console.log(myCounter2.increment());
+// console.log(myCounter2.increment());
+// console.log(myCounter2.increment());
+// console.log(myCounter2.increment());
+// console.log(myCounter2.increment());
+// console.log(myCounter2.decrement());
 
 
 
