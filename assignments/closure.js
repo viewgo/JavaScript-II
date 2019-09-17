@@ -7,7 +7,7 @@
 function stuff() {
   let name = 'Hugo';
   function displayName() {
-    alert(name);
+    console.log(name);
   }
   return displayName;
 }
@@ -26,7 +26,22 @@ const counterMaker = () => {
   //      NOTE: This `counter` function, being nested inside `counterMaker`,
   //      "closes over" the `count` variable. It can "see" it in the parent scope!
   // 3- Return the `counter` function.
+  let count = 0;
+
+  const counter = () => {
+    count++;
+    return count;
+  }
+
+  return counter;
 };
+
+const myCounter = counterMaker();
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
+console.log(myCounter());
 // Example usage: const myCounter = counterMaker();
 // myCounter(); // 1
 // myCounter(); // 2

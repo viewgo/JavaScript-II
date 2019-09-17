@@ -113,6 +113,8 @@ function removeDuplicates(array, cb) {
   // removeDuplicates removes all duplicate values from the given array.
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
+  
+  return cb(Array.from(new Set(array)));
 }
-const test6 = removeDuplicates(items, item => item);
+const test6 = removeDuplicates(['A','A','B','C','A','D','D','E','A','A','B','F'], item => `Unique Array is now ${item}`);
 console.log(test6);
