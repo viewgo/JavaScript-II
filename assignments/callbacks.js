@@ -39,26 +39,73 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 */
 
 
-function getLength(arr, cb) {
+
+function getLength(arr, cb) {  
   // getLength passes the length of the array into the callback.
+  return cb(arr.length);
 }
+const test1 = getLength(items, item => `Array is ${item} elements long!`);
+console.log(test1);
+ 
+// CONCISE TEST
+// getLength( items, (getLength) => { console.log(getLength); } );
+
+
 
 function last(arr, cb) {
   // last passes the last item of the array into the callback.
+  return cb(arr[arr.length - 1]);   
 }
+const test2 = last(items, item => `Array's last element is ${item}!`);
+console.log(test2);
+
+// CONCISE TEST
+// last( items, (last) => { console.log(last); } );
+
+
+
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  return cb(x + y);
 }
+const test3 = sumNums(4, 7, item => `Sum is ${item}!`);
+console.log(test3);
+
+// CONCISE TEST
+// sumNums( 4, 7, (sumNums) => { console.log(sumNums); } );
+
+
+
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  return cb(x * y);
 }
+const test4 = multiplyNums(10, 3, item => `Product is ${item}`);
+console.log(test4);
+
+// CONCISE TEST
+// multiplyNums( 10, 3, (multiplyNums) => { console.log(multiplyNums); } );
+
+
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+  // Pass true to the callback if it is, otherwise pass false.  
+  if(list.includes(item))
+    return cb(true);  
+  else
+    return cb(false); 
 }
+const test5 = contains('yo-yo', items, item => item);
+console.log(test5);
+
+// CONCISE TEST
+// contains( 'yo-yo', items, (contains) => { console.log(contains); } );
+
+
 
 /* STRETCH PROBLEM */
 
@@ -67,3 +114,5 @@ function removeDuplicates(array, cb) {
   // Pass the duplicate free array to the callback function.
   // Do not mutate the original array.
 }
+const test6 = removeDuplicates(items, item => item);
+console.log(test6);
